@@ -24,3 +24,29 @@ app:
 # Install all dependencies
 install:
 	pip install -r requirements.txt
+
+	import subprocess
+
+def run(cmd):
+    print(f"\n➡️ Running: {cmd}")
+    subprocess.run(cmd, shell=True, check=True)
+
+print("\n🚀 Starting Full Pipeline (Clean → Aggregate → Streamlit)...")
+
+run("python src/clean_data.py")
+run("python src/agg.py")
+run("streamlit run src/app.py")
+
+stock_project/
+│
+├── data/
+├── src/
+│   ├── clean_data.py
+│   ├── agg.py
+│   ├── app.py
+│
+├── Makefile          <-- ADD THIS
+├── run_all.py        <-- ADD THIS
+├── README.md
+└── requirements.txt
+
