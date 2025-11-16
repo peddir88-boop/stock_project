@@ -1,4 +1,3 @@
-# -----------------------------------------
 # Stock Project Automation Pipeline
 # clean → aggregate → launch Streamlit
 # -----------------------------------------
